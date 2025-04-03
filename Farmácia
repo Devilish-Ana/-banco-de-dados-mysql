@@ -1,0 +1,19 @@
+CREATE TABLE Farmácia (
+    idFarmácia INT PRIMARY KEY,
+    Tel_farmácia VARCHAR(15),
+    Nome_farmácia VARCHAR(100),
+    End_farmácia TEXT,
+    CNPJ_farmácia VARCHAR(18) UNIQUE
+);
+
+CREATE TABLE Produto (
+    idProduto INT PRIMARY KEY,
+    idFarmácia INT,
+    FOREIGN KEY (idFarmácia) REFERENCES Farmácia (idFarmácia)
+);
+
+CREATE TABLE Farmaceutico (
+    idFarmaceutico INT PRIMARY KEY,
+    idFarmácia INT,
+    FOREIGN KEY (idFarmácia) REFERENCES Farmácia (idFarmácia)
+);
